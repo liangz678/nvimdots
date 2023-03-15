@@ -29,7 +29,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
--- auto close some filetype with <q>
+-- -- auto close some filetype with <q>
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"qf",
@@ -89,10 +90,12 @@ function autocmd.load_autocmds()
 				[[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif]],
 			},
 			-- Auto toggle fcitx5
-			-- {"InsertLeave", "* :silent", "!fcitx5-remote -c"},
-			-- {"BufCreate", "*", ":silent !fcitx5-remote -c"},
-			-- {"BufEnter", "*", ":silent !fcitx5-remote -c "},
-			-- {"BufLeave", "*", ":silent !fcitx5-remote -c "}
+			{ "InsertLeave", "* :silent", "!D:\\tools\\im-select.exe 1033" },
+			{ "BufCreate", "*", ":silent !D:\\tools\\im-select.exe 1033" },
+			{ "BufEnter", "*", ":silent !D:\\tools\\im-select.exe 1033 " },
+			{ "BufLeave", "*", ":silent !D:\\tools\\im-select.exe 1033 " },
+			{ "InsertEnter", "*", ":silent !D:\\tools\\im-select.exe 2052 " },
+			{ "VimLeave", "*", ":silent !D:\\tools\\im-select.exe 2052 " },
 		},
 		wins = {
 			-- Highlight current line only on focused window

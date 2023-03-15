@@ -17,7 +17,7 @@ return vim.schedule_wrap(function()
 			"javascript",
 			"json",
 			"latex",
-			"lua",
+			-- "lua",
 			"make",
 			"markdown",
 			"markdown_inline",
