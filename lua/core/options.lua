@@ -97,7 +97,7 @@ local function load_options()
 		wildignorecase = true,
 		winminwidth = 10,
 		winwidth = 30,
-		wrap = false,
+		wrap = true,
 		wrapscan = true,
 		writebackup = false,
 	}
@@ -121,6 +121,9 @@ local function load_options()
 	for name, value in pairs(global_local) do
 		vim.o[name] = value
 	end
+
+	vim.g.python_host_prog = "C:/ProgramData/Anaconda3/python.exe"
+	vim.g.python3_host_prog = "C:/ProgramData/Anaconda3/python.exe"
 
 	-- Fix sqlite3 missing-lib issue on Windows
 	if global.is_windows then

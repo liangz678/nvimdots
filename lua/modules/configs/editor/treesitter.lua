@@ -1,6 +1,5 @@
 return vim.schedule_wrap(function()
 	local use_ssh = require("core.settings").use_ssh
-
 	vim.api.nvim_set_option_value("foldmethod", "expr", {})
 	vim.api.nvim_set_option_value("foldexpr", "nvim_treesitter#foldexpr()", {})
 
@@ -17,7 +16,7 @@ return vim.schedule_wrap(function()
 			"javascript",
 			"json",
 			"latex",
-			-- "lua",
+			"lua",
 			"make",
 			"markdown",
 			"markdown_inline",
@@ -38,6 +37,15 @@ return vim.schedule_wrap(function()
 				return ok and is_large_file
 			end,
 			additional_vim_regex_highlighting = { "c", "cpp" },
+		},
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = "<CR>",
+				node_incremental = "<CR>",
+				node_decremental = "<BS>",
+				scope_incremental = "<TAB>",
+			},
 		},
 		textobjects = {
 			select = {
@@ -78,6 +86,7 @@ return vim.schedule_wrap(function()
 		context_commentstring = { enable = true, enable_autocmd = false },
 		matchup = { enable = true },
 	})
+
 	require("nvim-treesitter.install").prefer_git = true
 	if use_ssh then
 		local parsers = require("nvim-treesitter.parsers").get_parser_configs()

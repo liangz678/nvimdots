@@ -24,11 +24,11 @@ ui["j-hui/fidget.nvim"] = {
 	event = "BufReadPost",
 	config = require("ui.fidget"),
 }
-ui["lewis6991/gitsigns.nvim"] = {
-	lazy = true,
-	event = { "CursorHold", "CursorHoldI" },
-	config = require("ui.gitsigns"),
-}
+-- ui["lewis6991/gitsigns.nvim"] = {
+-- 	lazy = true,
+-- 	event = { "CursorHold", "CursorHoldI" },
+-- 	config = require("ui.gitsigns"),
+-- }
 ui["lukas-reineke/indent-blankline.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",
