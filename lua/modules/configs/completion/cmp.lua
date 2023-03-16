@@ -60,7 +60,7 @@ return function()
 			comparators = {
 				require("copilot_cmp.comparators").prioritize,
 				require("copilot_cmp.comparators").score,
-				-- require("cmp_tabnine.compare"),
+				require("cmp_tabnine.compare"),
 				compare.offset,
 				compare.exact,
 				compare.lsp_scores,
@@ -131,7 +131,7 @@ return function()
 			{ name = "latex_symbols" },
 			{ name = "copilot" },
 			-- { name = "codeium" },
-			-- { name = "cmp_tabnine" },
+			{ name = "cmp_tabnine" },
 		},
 	})
 end
